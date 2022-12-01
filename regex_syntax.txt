@@ -1,0 +1,42 @@
+Vocabulary : 
+PARO PARF ACCO ACCF CROO CROF VIRG QUEST DOT PLUS STAR OR CHAR INT END 
+
+
+Python regex Grammar :
+
+
+regex -> seq_re
+regex -> ɛ
+
+seq_re -> pre_op re post_op suite_seq_re
+
+suite_seq_re -> pre_op re post_op suite_seq_re
+suite_seq_re -> ɛ
+
+pre_op -> ACCO INT repet
+pre_op -> ɛ
+
+repet -> ACCF
+repet -> VIRG INT
+
+re -> CROO chaine CROF // set of characters
+re -> PARO seq_re PARF
+re -> CHAR
+re -> INT
+re -> DOT  
+
+chaine -> CHAR suite_chaine
+chaine -> INT suite_chaine
+
+
+
+suite_chaine -> CHAR suite_chaine
+suite_chaine -> INT suite_chaine
+suite_chaine -> ɛ
+
+post_op -> OR re 
+post_op -> STAR
+post_op -> PLUS
+post_op -> QUEST
+post_op -> ɛ
+
